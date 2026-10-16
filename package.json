@@ -1,18 +1,14 @@
 {
-  "name": "cursorcloudagent",
+  "name": "vernier-atelier",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
-    "build": "npm run build -w client && npm run build -w server",
-    "start": "npm run start -w server",
-    "postinstall": "npm run build -w client"
+    "dev": "npm run dev -w client",
+    "build": "npm run build -w client",
+    "preview": "npm run preview -w client -- --host 127.0.0.1 --port 4173",
+    "start": "npm run preview"
   },
   "workspaces": [
-    "server",
     "client"
-  ],
-  "devDependencies": {
-    "concurrently": "^9.1.2"
-  }
+  ]
 }
